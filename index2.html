@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index 2</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            padding: 0;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            background-image: url("{{ url_for('static', filename='imagenes/1.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-top: 75px; /* Espacio superior para que no tape el contenido del banner */
+        }
+
+        /* Control de la posición de la imagen */
+        .banner img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Logo sobrepuesto */
+        .logo {
+            position: absolute;
+            top: -60px; /* Ajusta la distancia desde la parte superior */
+            left: 40px; /* Ajusta la distancia desde la parte izquierda */
+            z-index: 20; /* Asegura que el logo quede sobre la imagen */
+        }
+
+        .logo a {
+            display: block;
+            width: 80px; /* Tamaño del logo */
+            cursor: pointer;
+        }
+
+        .logo img {
+            width: 100%; /* Asegura que el logo se ajuste correctamente */
+            height: auto;
+        }
+
+        /* Contenedor para las imágenes de abajo */
+        .image-container {
+            display: flex;
+            flex-direction: column; /* Alinea las imágenes en una columna */
+            gap: 0; /* Elimina el espacio entre las imágenes */
+            padding: 0px 0;
+            margin-top: 120px; /* Ajuste para dejar espacio debajo del banner */
+            width: 100%;
+        }
+
+        .image-container img {
+            width: 100%; /* Las imágenes ocupan todo el ancho */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: cover; /* Asegura que las imágenes se ajusten de forma uniforme */
+            margin-bottom: 0px; /* Espacio pequeño entre las imágenes */
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .banner {
+                height: 30vh; /* Reduce la altura de la imagen en pantallas pequeñas */
+            }
+
+            /* Ajusta las imágenes para dispositivos pequeños */
+            .image-container img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Estilo para el pie de página */
+        .footer {
+            background-color: #591695; /* Fondo morado */
+            padding: 20px 0; /* Espaciado interno */
+            text-align: center; /* Centrar contenido */
+        }
+
+        .footer a {
+            margin: 0 10px; /* Espaciado entre íconos */
+            display: inline-block;
+        }
+
+        /* Estilo general para los íconos del pie de página */
+        .footer img {
+            width: 50px; /* Tamaño predeterminado de los íconos */
+            height: auto;
+            transition: transform 0.3s ease; /* Efecto de hover */
+        }
+
+        /* Efecto al pasar el mouse sobre los íconos */
+        .footer img:hover {
+            transform: scale(1.2); /* Aumentar tamaño al pasar el mouse */
+        }
+
+        /* Estilo individual para íconos */
+        .icon-facebook img {
+            width: 50px; /* Tamaño específico para Facebook */
+            height: 50px;
+        }
+
+        .icon-instagram img {
+            width: 50px; /* Tamaño específico para Instagram */
+            height: 50px;
+        }
+
+        .icon-tiktok img {
+            width: 50px; /* Tamaño específico para TikTok */
+            height: 50px;
+        }
+
+        .icon-pinterest img {
+            width: 50px; /* Tamaño específico para Pinterest */
+            height: 50px;
+        }
+
+        /* Responsividad para íconos */
+        @media (max-width: 768px) {
+            .footer img {
+                width: 30px; /* Ajustar tamaño de íconos en pantallas pequeñas */
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner -->
+    <div class="banner">
+        <!-- Imagen principal -->
+        <img src="{{ url_for('static', filename='imagenes/1.png') }}" alt="Imagen principal">
+        <!-- Logo sobrepuesto -->
+        <div class="logo">
+            <a href="/">
+                <img src="{{ url_for('static', filename='imagenes/logo.png') }}" alt="Logo">
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenedor para las imágenes debajo del banner -->
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='imagenes/4. EVITAR VAPORES/20.webp') }}" alt="Imagen 20">
+        <img src="{{ url_for('static', filename='imagenes/4. EVITAR VAPORES/21.webp') }}" alt="Imagen 21">
+        <img src="{{ url_for('static', filename='imagenes/4. EVITAR VAPORES/22.webp') }}" alt="Imagen 22">
+        <img src="{{ url_for('static', filename='imagenes/4. EVITAR VAPORES/23.webp') }}" alt="Imagen 23">
+        <img src="{{ url_for('static', filename='imagenes/4. EVITAR VAPORES/24.webp') }}" alt="Imagen 24">
+        <img src="{{ url_for('static', filename='imagenes/4. EVITAR VAPORES/25.webp') }}" alt="Imagen 25">
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <a href="https://web.facebook.com/Kercomplex" target="_blank" class="icon-facebook">
+            <img src="{{ url_for('static', filename='imagenes/facebook-icon.png') }}" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/kercomplex/" target="_blank" class="icon-instagram">
+            <img src="{{ url_for('static', filename='imagenes/instagram-icon.png') }}" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@kercomplex" target="_blank" class="icon-tiktok">
+            <img src="{{ url_for('static', filename='imagenes/tiktok-icon.png') }}" alt="TikTok">
+        </a>
+        <a href="https://co.pinterest.com/kercomplex/" target="_blank" class="icon-pinterest">
+            <img src="{{ url_for('static', filename='imagenes/pinterest-icon.png') }}" alt="Pinterest">
+        </a>
+    </footer>
+
+</body>
+</html>

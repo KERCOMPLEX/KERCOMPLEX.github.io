@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index 6</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            padding: 0;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            background-image: url("{{ url_for('static', filename='imagenes/2.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-top: 75px; /* Espacio superior para que no tape el contenido del banner */
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Logo sobrepuesto */
+        .logo {
+            position: absolute;
+            top: -70px; /* Ajusta la distancia desde la parte superior */
+            left: 40px; /* Ajusta la distancia desde la parte izquierda */
+            z-index: 20; /* Asegura que el logo quede sobre la imagen */
+        }
+
+        .logo a {
+            display: block;
+            width: 80px; /* Tamaño del logo */
+            cursor: pointer;
+        }
+
+        .logo img {
+            width: 100%; /* Asegura que el logo se ajuste correctamente */
+            height: auto;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding: 20px 0;
+            margin-top: 100px;
+            width: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 0px;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .banner {
+                height: 30vh;
+            }
+
+            .image-container img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .footer {
+            background-color: #591695;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .footer img {
+            width: 50px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .footer img:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .footer img {
+                width: 30px;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner -->
+    <div class="banner">
+        <img src="{{ url_for('static', filename='imagenes/2.png') }}" alt="Imagen principal">
+        <!-- Logo sobrepuesto -->
+        <div class="logo">
+            <a href="/">
+                <img src="{{ url_for('static', filename='imagenes/logo.png') }}" alt="Logo">
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenedor para las imágenes debajo del banner -->
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='imagenes/8. REPOSICION DE AMINOACIDOS/46.webp') }}" alt="Imagen 46">
+        <img src="{{ url_for('static', filename='imagenes/8. REPOSICION DE AMINOACIDOS/47.webp') }}" alt="Imagen 47">
+        <img src="{{ url_for('static', filename='imagenes/8. REPOSICION DE AMINOACIDOS/48.webp') }}" alt="Imagen 48">
+        <img src="{{ url_for('static', filename='imagenes/8. REPOSICION DE AMINOACIDOS/49.webp') }}" alt="Imagen 49">
+        <img src="{{ url_for('static', filename='imagenes/8. REPOSICION DE AMINOACIDOS/50.webp') }}" alt="Imagen 50">
+        <img src="{{ url_for('static', filename='imagenes/8. REPOSICION DE AMINOACIDOS/51.webp') }}" alt="Imagen 51">
+        <img src="{{ url_for('static', filename='imagenes/8. REPOSICION DE AMINOACIDOS/52.webp') }}" alt="Imagen 52">
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <a href="https://web.facebook.com/Kercomplex" target="_blank" class="icon-facebook">
+            <img src="{{ url_for('static', filename='imagenes/facebook-icon.png') }}" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/kercomplex/" target="_blank" class="icon-instagram">
+            <img src="{{ url_for('static', filename='imagenes/instagram-icon.png') }}" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@kercomplex" target="_blank" class="icon-tiktok">
+            <img src="{{ url_for('static', filename='imagenes/tiktok-icon.png') }}" alt="TikTok">
+        </a>
+        <a href="https://co.pinterest.com/kercomplex/" target="_blank" class="icon-pinterest">
+            <img src="{{ url_for('static', filename='imagenes/pinterest-icon.png') }}" alt="Pinterest">
+        </a>
+    </footer>
+
+</body>
+</html>
